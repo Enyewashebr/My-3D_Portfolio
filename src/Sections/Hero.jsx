@@ -1,5 +1,7 @@
 import React from "react";
 import { words } from "../constants";
+import Button from "../components/button";
+import HeroExperience from "../components/HeroModels/HeroExperience";
 
 const Hero = () => {
   return (
@@ -33,12 +35,30 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
+
               <h1>into Real Projects</h1>
               <h1>that Deliver Results</h1>
             </div>
+            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+              Hi, I'm Enyew, a frontend developer who loves creating
+              interactive, scalable web applications. My purpose is to build
+              solutions that offer dynamic UI, high performance and delightful
+              UX.
+            </p>
+            <Button 
+            className="md:w-60  md:h-16 h-12 w-60"
+            id="button"
+            text="See my projects"
+            />
           </div>
         </header>
         {/* Right: Hero image */}
+
+        <figure>
+          <div className="hero-3d-layout ">
+            <HeroExperience />
+          </div>
+        </figure>
       </div>
     </section>
   );
