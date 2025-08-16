@@ -8,7 +8,7 @@ import { Room } from './Room';
 
 const HeroExperience = () => {
   const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
-  // const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   // const texture = useLoader(THREE.TextureLoader, "/pic-logo.jpg");
 
     // const materials = [
@@ -20,11 +20,11 @@ const HeroExperience = () => {
     //   // new THREE.MeshStandardMaterial({ color: "teal" }), // face 6
     // ];
   return (
-    <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
+    <Canvas camera={{ position: [7, 15, 40], fov: 45 }}>
       <ambientLight intensity={0.2} color="1a1a40" />
-      <directionalLight position={[5, 5, 5]} intensity={5} />
+      <directionalLight position={[5, 5, 5]} intensity={2} />
 
-      <OrbitControls 
+      <OrbitControls
       enablePan={false}
       enableZoom={!isTablet}
       maxDistance={20}
@@ -40,6 +40,14 @@ const HeroExperience = () => {
         {/* <img src="/pic-logo.jpg" alt="" /> */}
          {/* <meshStandardMaterial color="teal" /> */}
       {/* </mesh>  */} 
+
+
+
+      <group
+      scale={isMobile ? 0.7 : 1}
+      position={[0, -3.5, 0]}
+      rotation={[0, Math.PI / 4, 0]}
+      />
 
       <Room />
       

@@ -47,7 +47,7 @@ export function Room(props) {
       <Text
         position={[0, 0.19, 3.2]} // X, Y, Z position in the room
         fontSize={0.28} // Size of the text
-        color="blue" // Text color
+        color="white" // Text color
         rotation={[-Math.PI / 20, 0, 0]}
         // Optional: rotate if needed 0]} // Optional: rotate if needed
       >
@@ -57,7 +57,7 @@ export function Room(props) {
       <Text
         position={[-0.05, 1.68, -1.4]} // X, Y, Z position in the room
         fontSize={0.28} // Size of the text
-        color="green" // Text color
+        color="blue" // Text color
         rotation={[-Math.PI / 2, 0, 0]}
         // Optional: rotate if needed 0]} // Optional: rotate if needed
       >
