@@ -5,6 +5,7 @@ import { useGLTF, useTexture, Text } from "@react-three/drei";
 export function Room(props) {
   const { nodes, materials } = useGLTF('/models/optimized-room.glb')
   const myImageTexture = useTexture("/pic-logo.jpg");
+  const myImageTexture2 = useTexture("/gra-pic.png");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -14,7 +15,7 @@ export function Room(props) {
       <mesh
         geometry={nodes.body1_blinn1_0.geometry}
         material={materials.blinn1}
-      /> 
+      />
       <Text
         position={[0.5, 0.3, 2]} // X, Y, Z position in the room
         fontSize={0.4} // Size of the text
@@ -26,11 +27,11 @@ export function Room(props) {
       </Text>
 
       <Text
-        position={[0, 5.68, -3.3]} 
-        fontSize={0.4} 
-        color="blue" 
+        position={[0, 5.68, -3.3]}
+        fontSize={0.4}
+        color="blue"
         rotation={[-Math.PI / 2, 0, 0]}
-         // Optional: rotate if needed
+        // Optional: rotate if needed
       >
         Software Engineer!
       </Text>
@@ -43,6 +44,25 @@ export function Room(props) {
       >
         Design. Create. Inspire.!
       </Text>
+      <Text
+        position={[0, 0.19, 3.2]} // X, Y, Z position in the room
+        fontSize={0.28} // Size of the text
+        color="blue" // Text color
+        rotation={[-Math.PI / 20, 0, 0]}
+        // Optional: rotate if needed 0]} // Optional: rotate if needed
+      >
+        I'am a Front end Web Developer!
+      </Text>
+
+      <Text
+        position={[-0.05, 1.68, -1.4]} // X, Y, Z position in the room
+        fontSize={0.28} // Size of the text
+        color="green" // Text color
+        rotation={[-Math.PI / 2, 0, 0]}
+        // Optional: rotate if needed 0]} // Optional: rotate if needed
+      >
+        Let's build something together!
+      </Text>
       {/* <mesh geometry={nodes.body1_blinn1_0.geometry}>
         <meshStandardMaterial map={myImageTexture} />
       </mesh> */}
@@ -53,7 +73,6 @@ export function Room(props) {
           <meshStandardMaterial map={myImageTexture} />
         </mesh>
 
-        
         {/** Frame */}
         {/** Top frame */}
         <mesh position={[0, 1.34, -0.05]}>
@@ -79,6 +98,11 @@ export function Room(props) {
           <meshStandardMaterial color="black" />
         </mesh>
       </group>
+
+      <mesh position={[2.5, 2.8, -2.9]}>
+        <planeGeometry args={[1.2, 1.2]} />
+        <meshStandardMaterial map={myImageTexture2} />
+      </mesh>
 
       <mesh
         geometry={nodes.cabin_blinn1_0.geometry}
