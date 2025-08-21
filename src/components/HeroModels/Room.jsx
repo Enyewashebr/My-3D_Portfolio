@@ -1,21 +1,59 @@
-
-import React from 'react'
+import React, { useRef } from "react";
+import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
+import * as THREE from "three";
 import { useGLTF, useTexture, Text } from "@react-three/drei";
 
 export function Room(props) {
-  const { nodes, materials } = useGLTF('/models/optimized-room.glb')
+  const { nodes, materials } = useGLTF("/models/optimized-room.glb");
+  const screensRef = useRef();
+  const matcapTexture = useTexture("/images/textures/mat1.png");
   const myImageTexture = useTexture("/pic-logo.jpg");
   const myImageTexture2 = useTexture("/gra-pic.png");
+
+  const curtainMaterial = new THREE.MeshPhongMaterial({
+    color: "#d90429",
+  });
+
+  const bodyMaterial = new THREE.MeshPhongMaterial({
+    map: matcapTexture,
+  });
+
+  const tableMaterial = new THREE.MeshPhongMaterial({
+    color: "#582f0e",
+  });
+
+  const radiatorMaterial = new THREE.MeshPhongMaterial({
+    color: "#fff",
+  });
+
+  const compMaterial = new THREE.MeshStandardMaterial({
+    color: "#fff",
+  });
+
+  const pillowMaterial = new THREE.MeshPhongMaterial({
+    color: "#8338ec",
+  });
+
+  const chairMaterial = new THREE.MeshPhongMaterial({
+    color: "#000",
+  });
   return (
     <group {...props} dispose={null}>
+      <EffectComposer>
+        <SelectiveBloom
+          selection={screensRef}
+          intensity={1.5} // Strength of the bloom
+          luminanceThreshold={0.2} // Minimum luminance needed
+          luminanceSmoothing={0.9} // Smooth transition
+          blendFunction={BlendFunction.ADD} // How it blends
+        />
+      </EffectComposer>
       <mesh
         geometry={nodes._________6_blinn1_0.geometry}
-        material={materials.blinn1}
+        material={curtainMaterial}
       />
-      <mesh
-        geometry={nodes.body1_blinn1_0.geometry}
-        material={materials.blinn1}
-      />
+      <mesh geometry={nodes.body1_blinn1_0.geometry} material={bodyMaterial} />
       <Text
         position={[0.5, 0.3, 2]} // X, Y, Z position in the room
         fontSize={0.4} // Size of the text
@@ -25,7 +63,6 @@ export function Room(props) {
       >
         Welcome to My World!
       </Text>
-
       <Text
         position={[0, 5.68, -3.3]}
         fontSize={0.4}
@@ -53,19 +90,15 @@ export function Room(props) {
       >
         I'am a Front end Web Developer!
       </Text>
-
       <Text
         position={[-0.05, 1.68, -1.4]} // X, Y, Z position in the room
         fontSize={0.28} // Size of the text
-        color="blue" // Text color
+        color="white" // Text color
         rotation={[-Math.PI / 2, 0, 0]}
         // Optional: rotate if needed 0]} // Optional: rotate if needed
       >
         Let's build something together!
       </Text>
-      {/* <mesh geometry={nodes.body1_blinn1_0.geometry}>
-        <meshStandardMaterial map={myImageTexture} />
-      </mesh> */}
       <group position={[0, 4, -2.9]}>
         {/* Picture */}
         <mesh>
@@ -98,25 +131,18 @@ export function Room(props) {
           <meshStandardMaterial color="black" />
         </mesh>
       </group>
-
       <mesh position={[2.5, 2.8, -2.9]}>
         <planeGeometry args={[1.2, 1.2]} />
         <meshStandardMaterial map={myImageTexture2} />
       </mesh>
-
-      <mesh
-        geometry={nodes.cabin_blinn1_0.geometry}
-        material={materials.blinn1}
-      />
+      <mesh geometry={nodes.cabin_blinn1_0.geometry} material={tableMaterial} />
       <mesh
         geometry={nodes.chair_body_blinn1_0.geometry}
-        material={materials.blinn1}
+        material={chairMaterial}
       />
+      <mesh geometry={nodes.comp_blinn1_0.geometry} material={compMaterial} />
       <mesh
-        geometry={nodes.comp_blinn1_0.geometry}
-        material={materials.blinn1}
-      />
-      <mesh
+        ref={screensRef}
         geometry={nodes.emis_lambert1_0.geometry}
         material={materials.lambert1}
       />
@@ -158,7 +184,7 @@ export function Room(props) {
       />
       <mesh
         geometry={nodes.pillows_blinn1_0.geometry}
-        material={materials.blinn1}
+        material={pillowMaterial}
       />
       <mesh
         geometry={nodes.polySurface53_blinn1_0.geometry}
@@ -166,7 +192,7 @@ export function Room(props) {
       />
       <mesh
         geometry={nodes.radiator_blinn1_0.geometry}
-        material={materials.blinn1}
+        material={radiatorMaterial}
       />
       <mesh
         geometry={nodes.radiator_blinn1_0001.geometry}
@@ -188,10 +214,7 @@ export function Room(props) {
         geometry={nodes.stylus_blinn1_0.geometry}
         material={materials.blinn1}
       />
-      <mesh
-        geometry={nodes.table_blinn1_0.geometry}
-        material={materials.blinn1}
-      />
+      <mesh geometry={nodes.table_blinn1_0.geometry} material={tableMaterial} />
       <mesh
         geometry={nodes.tablet_blinn1_0.geometry}
         material={materials.blinn1}
@@ -228,4 +251,4 @@ export function Room(props) {
   );
 }
 
-useGLTF.preload('/models/optimized-room.glb')
+useGLTF.preload("/models/optimized-room.glb");

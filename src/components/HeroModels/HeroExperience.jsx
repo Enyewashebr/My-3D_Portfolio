@@ -1,11 +1,10 @@
-// import React, { use } from 'react'
+
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useMediaQuery } from 'react-responsive';
 import { Room } from './Room';
 import HeroLights from './HeroLights';
-// import { useLoader } from "@react-three/fiber";
-// import * as THREE from "three";
+
 
 const HeroExperience = () => {
   const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
@@ -27,20 +26,13 @@ const HeroExperience = () => {
 
       <HeroLights />
 
-      {/* <mesh material={materials} > */}
-      {/* <mesh> */}
-        {/* <boxGeometry args={[5, 5, 5]} />
-        {/* <sphereGeometry args={[5, 32, 32]} /> */}
-        {/* <img src="/pic-logo.jpg" alt="" /> */}
-         {/* <meshStandardMaterial color="teal" /> */}
-      {/* </mesh>  */} 
 
 
 
       <group
       scale={isMobile ? 0.7 : 1}
       position={[0, -3.5, 0]}
-      rotation={[0, Math.PI / 4, 0]}
+      rotation={[0, -Math.PI / 4, 0]}
       />
 
       <Room />
