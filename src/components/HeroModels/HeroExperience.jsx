@@ -4,6 +4,7 @@ import { OrbitControls } from '@react-three/drei';
 import { useMediaQuery } from 'react-responsive';
 import { Room } from './Room';
 import HeroLights from './HeroLights';
+import Particles from './Particles';
 
 
 const HeroExperience = () => {
@@ -26,7 +27,7 @@ const HeroExperience = () => {
 
       <HeroLights />
 
-
+    <Particles  count={100}/>
 
 
       <group
