@@ -4,6 +4,7 @@ import Button from "../components/button";
 import HeroExperience from "../components/HeroModels/HeroExperience";
 import {useGSAP} from "@gsap/react"
 import gsap from "gsap";
+import AnimatedCounter from "../components/AnimatedCounter";
 
 const Hero = () => {
 
@@ -26,7 +27,7 @@ useGSAP (() =>{
   return (
     <section id="hero" className="relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 -z-0">
+      <div className="absolute inset-0 -z-0 ">
         <img
           src="/images/bg.png"
           alt="background"
@@ -83,6 +84,8 @@ useGSAP (() =>{
           </div>
         </figure>
       </div>
+
+      <AnimatedCounter />
     </section>
   );
 };
