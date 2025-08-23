@@ -1,11 +1,12 @@
 import React from 'react'
 import Hero from './Sections/Hero'
+import ShowcaseSection from './Sections/ShowcaseSection'
 
 const App = () => {
   return (
     <>
     <Hero />
-    {/* <div className="h-screen bg--100 flex items-center justify-center mt-10">Hello</div> */}
+    <ShowcaseSection />
     </>
   )
 }
