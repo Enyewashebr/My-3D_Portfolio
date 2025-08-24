@@ -1,13 +1,69 @@
 import React from 'react'
-import Button from '../components/button';
+import { useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+// import Button from '../components/button';
 
 const ShowcaseSection = () => {
+  const sectionRef = useRef(null);
+  const project1Ref = useRef(null);
+  const project2Ref = useRef(null);
+  const project3Ref = useRef(null);
+  const project4Ref = useRef(null);
+  const project5Ref = useRef(null);
+  const project6Ref = useRef(null);
+
+
+
+
+  useGSAP(() =>{
+    const projects = [
+      project1Ref.current,
+      project2Ref.current,
+      project3Ref.current,
+      project4Ref.current,
+      project5Ref.current,
+      project6Ref.current,
+    ];
+
+    projects.forEach((project, index) => {
+      gsap.fromTo(
+        project,
+        { opacity: 0 },
+        {
+          y: 50,
+          opacity: 1,
+          duration: 1,
+          delay: 0.5 * (index + 1),
+          scrollTrigger: {
+            trigger: project,
+            start: "top bottom -=100",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    });
+gsap.fromTo(
+  sectionRef.current,
+  {opacity:0},
+  {opacity:1, duration:1.5}
+)
+  }, []);
+
+
   return (
-    <section id="projects" class="py-20 px-10  mt-10">
+    <section id="projects" ref={sectionRef} class="py-20 px-10  mt-10">
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* <!-- Weather Dashboard --> */}
-          <div class="bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden">
+          <div class="project1 bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden" ref={project1Ref}>
             <img
               src="./images/weather1.jpg"
               alt="Weather Dashboard"
@@ -21,7 +77,7 @@ const ShowcaseSection = () => {
                 A responsive weather app that displays real-time city weather
                 data, focusing on clean design, API integration
               </p>
-             
+
               <div class="flex justify-center gap-3">
                 <a
                   href="https://e-weatherdashboard.vercel.app/"
@@ -42,7 +98,7 @@ const ShowcaseSection = () => {
           </div>
 
           {/* <!-- Enex Boutiq --> */}
-          <div class="bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden">
+          <div class="project2 bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden" ref={project2Ref}>
             <img
               src="./images/enex-boutique1.png"
               alt="Enex Boutiq"
@@ -57,7 +113,7 @@ const ShowcaseSection = () => {
                 filtering, detailed descriptions, cart management, and a secure
                 checkout process.
               </p>
-              
+
               <div class="flex justify-center gap-3">
                 <a
                   href="https://enexboutique.vercel.app/"
@@ -78,7 +134,7 @@ const ShowcaseSection = () => {
           </div>
 
           {/* <!-- Netflix Clone --> */}
-          <div class="bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden">
+          <div class="project3 bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden"   ref={project3Ref}>
             <img
               src="./images/netflix1.png"
               alt="Netflix Clone"
@@ -93,7 +149,7 @@ const ShowcaseSection = () => {
                 featuring dynamic content from the TMDB API, smooth scrolling
                 sections, a hero banner, and interactive hover effects.
               </p>
-             
+
               <div class="flex justify-center gap-3">
                 <a
                   href="https://netflex-by-enyew.vercel.app/"
@@ -114,7 +170,7 @@ const ShowcaseSection = () => {
           </div>
 
           {/* <!-- Gebeya Market --> */}
-          <div class="bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden">
+          <div class="project4 bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden" ref={project4Ref}>
             <img
               src="./images/gebeya1.png"
               alt="Gebeya Market"
@@ -128,7 +184,7 @@ const ShowcaseSection = () => {
                 Online marketplace with smooth UI & seamless shopping
                 experience.
               </p>
-              
+
               <div class="flex justify-center gap-3">
                 <a
                   href="https://gebeyamarket.vercel.app/"
@@ -149,7 +205,7 @@ const ShowcaseSection = () => {
           </div>
 
           {/* <!-- Real Estate website --> */}
-          <div class="bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden">
+          <div class="project5 bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden" ref={project5Ref}>
             <img
               src="./images/real-estate1.png"
               alt="Gebeya Market"
@@ -164,7 +220,7 @@ const ShowcaseSection = () => {
                 scrolling and subtle animations for a modern, user-friendly
                 experience.
               </p>
-             
+
               <div class="flex justify-center gap-3">
                 <a
                   href="https://enexboutique.vercel.app/"
@@ -185,7 +241,7 @@ const ShowcaseSection = () => {
           </div>
 
           {/* <!-- Eagle School Dashboard --> */}
-          <div class="bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden">
+          <div class="project6 bg-gray-900 rounded-xl shadow-lg p-4 text-center transition-transform duration-300 hover:-translate-y-2 overflow-hidden" ref={project6Ref}>
             <img
               src="/images/eagle-school.png"
               alt="Eagle School Dashboard"
