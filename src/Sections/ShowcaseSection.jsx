@@ -15,7 +15,7 @@ const ShowcaseSection = () => {
           y: -15,
           scale: 1.05,
           boxShadow: "0px 10px 25px rgba(0,0,0,0.3)",
-          duration: 0.4,
+          duration: 1,
           ease: "power3.out",
         });
       });
@@ -103,7 +103,7 @@ const ShowcaseSection = () => {
                     <a
                       href={p.live}
                       target="_blank"
-                      className="px-4 py-2 bg-teal-400 text-white font-bold rounded hover:bg-white hover:text-teal-500 hover:border hover:border-teal-400 transition"
+                      className="px-4 py-2 bg-slate-700 text-white font-bold rounded hover:bg-black  hover:text-teal-500 hover:border hover:border-teal-400 transition"
                     >
                       Live Demo
                     </a>
@@ -115,7 +115,7 @@ const ShowcaseSection = () => {
                   <a
                     href={p.code}
                     target="_blank"
-                    className="px-4 py-2 bg-blue-600 text-white font-bold rounded hover:bg-black transition"
+                    className="px-4 py-2 bg-slate-950 text-white font-bold rounded hover:bg-black transition"
                   >
                     <i className="fab fa-github"></i> View Code
                   </a>
