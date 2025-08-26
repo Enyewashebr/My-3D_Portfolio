@@ -3,7 +3,7 @@ import Hero from './Sections/Hero'
 import ShowcaseSection from './Sections/ShowcaseSection'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import NavBar from './components/NavBar';
-
+import LogoSection from './components/LogoSection';
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
     <NavBar />
     <Hero />
     <ShowcaseSection />
+    <LogoSection />
     </>
   )
 }
