@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import NavBar from './components/NavBar';
 import LogoSection from './Sections/LogoSection';
 import FeatureCards from './Sections/FeatureCards';
+import EducationSection from './Sections/EducationSection';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
     <ShowcaseSection />
     <LogoSection />
     <FeatureCards />
+    <EducationSection />
     </>
   )
 }
