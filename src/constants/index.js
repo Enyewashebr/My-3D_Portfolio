@@ -78,19 +78,19 @@ const logoIconsList = [
 
 const abilities = [
   {
-    imgPath: "/images/seo.png",
-    title: "Quality Focus",
-    desc: "Delivering high-quality results while maintaining attention to every detail.",
+    imgPath: "/images/code.png",
+    title: "Front-End Excellence",
+    desc: "Building high-performance, responsive, and visually polished web applications using React, Tailwind CSS, and modern JavaScript frameworks.",
   },
   {
-    imgPath: "/images/chat.png",
-    title: "Reliable Communication",
-    desc: "Keeping you updated at every step to ensure transparency and clarity.",
+    imgPath: "/images/brain.png",
+    title: "Strong Analytical Mindset",
+    desc: "Combining engineering precision with creativity to design scalable solutions and write clean, maintainable code.",
   },
   {
-    imgPath: "/images/time.png",
-    title: "On-Time Delivery",
-    desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
+    imgPath: "/images/learn.png",
+    title: "future Development Path",
+    desc: "Continuously learning and expanding into back-end development, cloud integration, Machine Learning, and advanced software architecture.",
   },
 ];
 
