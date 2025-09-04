@@ -6,6 +6,9 @@ import NavBar from './components/NavBar';
 import LogoSection from './Sections/LogoSection';
 import FeatureCards from './Sections/FeatureCards';
 import EducationSection from './Sections/EducationSection';
+import TechStack from './Sections/TechStack';
+
+
 
 const App = () => {
   return (
@@ -16,6 +19,7 @@ const App = () => {
     <LogoSection />
     <FeatureCards />
     <EducationSection />
+    <TechStack />
     </>
   )
 }
