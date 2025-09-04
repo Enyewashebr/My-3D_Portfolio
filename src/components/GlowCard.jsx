@@ -18,7 +18,7 @@ const handleMouseMove = (index) => (e) =>{
   let angle = Math.atan2(mouseY, mouseX)*(180/Math.PI);
   angle = (angle +360)%360;
 
-  card,style.setProperty('--start', anglr+60)
+  card.style.setProperty('--start', angle+60)
 }
 
 
