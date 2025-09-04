@@ -1,9 +1,61 @@
-import React from 'react'
+// import React, { use } from 'react'
 import TitleHeader from '../components/TitleHeader'
 import { expCards } from '../constants'
 import GlowCard from '../components/GlowCard'
+import gsap from 'gsap'
+import {useGSAP} from '@gsap/react'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
 
 const EducationSection = () => {
+
+  useGSAP(() => {
+    gsap.utils.toArray('.timeline-card').forEach((card) => {
+      gsap.from(card, {
+        xPercent: -100,
+        opacity: 0,
+        transformOrigin:'lecft left',
+        duration: 1,
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 80%',
+        }
+      });
+    })
+
+    gsap.to('.timeline', {
+      transformOrigin:'bottom bottom',
+      ease:'power1.inOut',
+      scrollTrigger:{
+        trigger:'.timeline',
+        start:'top center',
+        end:'70% center'
+      },
+      onUpdate: function () {
+        gsap.to('.timeline', {
+          scaleY: 1-this.progress(),
+        })
+      }
+    })
+
+     gsap.utils.toArray(".expText").forEach((text) => {
+       gsap.from(text, {
+         xPercent: 0,
+         opacity: 0,
+         
+         duration: 1,
+         scrollTrigger: {
+           trigger: text,
+           start: "top 60%",
+         },
+       });
+     });
+    
+  }, [])
   return (
     <section
       id="education"
@@ -28,7 +80,7 @@ const EducationSection = () => {
                 <div className="xl:w-4/6">
                   <div className="flex items-start">
                     <div className="timeline-wrapper">
-                      <div className="timeline" />
+                      <div className=".timeline" />
                       <div className="gradient-line w-1 h-full" />
                     </div>
 
