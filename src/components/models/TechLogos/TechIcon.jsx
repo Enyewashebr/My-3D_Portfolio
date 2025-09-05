@@ -1,19 +1,20 @@
 import React from 'react'
-import {useGLTF} from '@react-three/drei'
+import {useGLTF, Environment, Float} from '@react-three/drei'
+import {Canvas} from '@react-three/fiber'
 
-const TechIcon = () => {
-    const scene = useGLTF(model.modelaPath)
+const TechIcon = ({model}) => {
+    const scene = useGLTF(model.modelPath)
   return (
     <Canvas>
       <ambientLight intensity={0.3} />
       <Environment preset = 'city' />
 
-      <float>
-        <group>
+      <Float speed={5.5} rotationintensity={3} floatIntensity={0.9}>
+        <group scale={model.scale}>
             <primitive object={scene.scene} />
 
         </group>
-      </float>
+      </Float>
     </Canvas>
   )
 }
