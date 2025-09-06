@@ -2,7 +2,24 @@ import React from "react";
 import TitleHeader from "../components/TitleHeader.jsx";
 import { techStackIcons } from "../constants/index.js";
 import TechIcon from "../components/models/TechLogos/TechIcon.jsx";
+import {useGSAP} from '@gsap/react'
+import {gsap} from 'gsap'
 const TechStack = () => {
+useGSAP(() => {
+  gsap.fromTo('.tech-card', {y:50, opacity:0}, {
+    y:0, 
+    opacity:1, 
+    stagger:0.2, 
+    duration:1, 
+    ease:'power2.out', 
+    scrollTrigger:{
+    trigger:'skills',
+    start:'top center',
+  }}) 
+})
+
+
+
   return (
     <div id="skills" className="flex-center section-padding ">
       
