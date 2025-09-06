@@ -1,26 +1,50 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 
 import TitleHeader from "../components/TitleHeader.jsx";
 import ContactExperience from "../components/ContactExperience.jsx";
+import emailjs from '@emailjs/browser';
 // import Button from "../components/Button.jsx";
 
 const Contact = () => {
-const [formData, setFormData] = React.useState({
+const formRef=useRef(null);
+
+
+
+const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
 });
 
+
+const [loading, setLoading] = useState(false);
 const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 };
 
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Submitted:', formData);
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' });
+    
+    // handle form submission logic here
+    
+    setLoading(true);
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+
+      // Reset form after submission
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+        console.log('EMAILJS ERROR', error)
+    } finally{
+        setLoading(false);
+    }
+    
 };
 
 
@@ -36,7 +60,8 @@ const handleSubmit = (e) => {
           {/* Left: Contact Form */}
           <div className="xl:col-span-5">
             <div className="flex-center card-border rounded-xl p-10">
-              <form
+              <form 
+                ref={formRef}
                 onSubmit={handleSubmit}
                 className="w-full flex flex-col gap-7"
               >
@@ -76,10 +101,12 @@ const handleSubmit = (e) => {
                     required
                   ></textarea>
                 </div>
-                <button type="submit">
+                <button disabled={loading} type="submit">
                   <div className="cta-button group">
                     <div className="bg-circle" />
-                    <p className="text">Send Message</p>
+                    <p className="text">
+                      {loading ? "Sending..." : "Send Message "}
+                    </p>
                     <div className="arrow-wrapper">
                       <img alt="arrow" src="/images/arrow-right.svg  " />
                     </div>
