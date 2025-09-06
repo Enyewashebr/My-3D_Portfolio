@@ -90,7 +90,7 @@ const handleSubmit = (e) => {
           </div>
           {/* Right: 3D Experience Placeholder */}
           <div className="xl:col-span-7 min-h-96">
-            <div className="w-full h-full bg-teal-500 hover:cursor-grap rounded-3xl overflow-hidden">
+            <div className="w-full h-full bg-blue-400 hover:cursor-grap rounded-3xl overflow-hidden">
               <ContactExperience />
             </div>
           </div>
