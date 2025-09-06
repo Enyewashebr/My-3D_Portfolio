@@ -7,6 +7,7 @@ import LogoSection from './Sections/LogoSection';
 import FeatureCards from './Sections/FeatureCards';
 import EducationSection from './Sections/EducationSection';
 import TechStack from './Sections/TechStack';
+import Contact from './Sections/Contact';
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
     <FeatureCards />
     <EducationSection />
     <TechStack />
+    <Contact />
     </>
   )
 }

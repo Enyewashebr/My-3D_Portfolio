@@ -1,6 +1,7 @@
 import React from "react";
 import TitleHeader from "../components/TitleHeader.jsx";
 import { techStackIcons } from "../constants/index.js";
+// , techStackImgs
 import TechIcon from "../components/models/TechLogos/TechIcon.jsx";
 import {useGSAP} from '@gsap/react'
 import {gsap} from 'gsap'
@@ -22,9 +23,8 @@ useGSAP(() => {
 
   return (
     <div id="skills" className="flex-center section-padding ">
-      
-        <div className="w-full h-full md:px-10 px-5">
-          <TitleHeader
+      <div className="w-full h-full md:px-10 px-5">
+        <TitleHeader
           title="My preferred Tech Stack"
           sub="What I bring to the table"
         />
@@ -34,7 +34,7 @@ useGSAP(() => {
               key={icon.name}
               className="card-border relative tech-card overflow-hidden group xl:rounded-full rounded-lg "
             >
-              <div className="tech-card-animated-bg"/>
+              <div className="tech-card-animated-bg" />
               <div className="tech-card-content">
                 <div className="tech-icon-wrapper">
                   <TechIcon model={icon} />
@@ -45,10 +45,25 @@ useGSAP(() => {
               </div>
             </div>
           ))}
+
+          {/* {techStackImgs.map((icon) => (
+            <div
+              key={icon.name}
+              className="card-border tech-card overflow-hidden group rounded-lg xl:rounded-full"
+            >
+              <div className="tech-card-animated-bg" />
+              <div className="tech-card-content">
+                <div className="tech-icon-wrapper">
+                  <img src={icon.imgPath} alt="" />
+                </div>
+                <div className="padding-x w-full">
+                  <p>{icon.name}</p>
+                </div>
+              </div>
+            </div>
+          ))} */}
         </div>
-        </div>
-        
-        
+      </div>
     </div>
   );
 };
