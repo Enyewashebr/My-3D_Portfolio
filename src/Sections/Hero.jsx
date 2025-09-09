@@ -1,10 +1,16 @@
-import React from "react";
+import React, {Suspense, lazy}from "react";
 import { words } from "../constants";
 import Button from "../components/Button.jsx";
-import HeroExperience from "../components/HeroModels/HeroExperience";
+// import HeroExperience from "../components/HeroModels/HeroExperience";
 import {useGSAP} from "@gsap/react"
 import gsap from "gsap";
-import AnimatedCounter from "../components/AnimatedCounter";
+// import AnimatedCounter from "../components/AnimatedCounter";
+// import { Suspense } from "react";
+
+const HeroExperience = lazy(() =>
+  import("../components/HeroModels/HeroExperience")
+);
+const AnimatedCounter = lazy(() => import("../components/AnimatedCounter"));
 
 const Hero = () => {
 
@@ -78,12 +84,18 @@ useGSAP (() =>{
         {/* Right: Hero image / 3D */}
         <figure className="hero-image w-full md:w-1/2 flex justify-center items-center  z-10 h-full mt-10 md:mt-0">
           <div className="hero-3d-layout w-full h-full min-h-[50vh]  xl:-top-20 md:top-20 xl:-right-20 right-0 pt-10 ">
-            <HeroExperience />
+
+            <Suspense fallback={<div className="flex-center min-h-[300px]">Loading...</div>}>
+              <HeroExperience />
+            </Suspense>
+            {/* <HeroExperience /> */}
           </div>
         </figure>
       </div>
-
-      <AnimatedCounter />
+      <Suspense fallback={<div className="flex-center min-h-[300px]">Loading...</div>}>
+        <AnimatedCounter />
+      </Suspense>
+      {/* <AnimatedCounter /> */}
     </section>
   );
 };

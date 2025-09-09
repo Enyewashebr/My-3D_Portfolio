@@ -3,8 +3,10 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useMediaQuery } from 'react-responsive';
 import { Room } from './Room';
-import HeroLights from './HeroLights';
+import React, { lazy, Suspense } from 'react';
+// import HeroLights from './HeroLights';
 import Particles from './Particles';
+const HeroLights = lazy(() => import("./HeroLights"));
 
 
 const HeroExperience = () => {
@@ -24,7 +26,7 @@ const HeroExperience = () => {
       maxPolarAngle={Math.PI / 2}
       />
 
-
+      
       <HeroLights />
 
     <Particles  count={100}/>
