@@ -8,6 +8,7 @@ import FeatureCards from './Sections/FeatureCards';
 import EducationSection from './Sections/EducationSection';
 import TechStack from './Sections/TechStack';
 import Contact from './Sections/Contact';
+import Footer from './components/Footer';
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
     <EducationSection />
     <TechStack />
     <Contact />
+    <Footer />
     </>
   )
 }
