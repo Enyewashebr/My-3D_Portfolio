@@ -88,7 +88,7 @@ export function Room(props) {
         rotation={[-Math.PI / 20, 0, 0]}
         // Optional: rotate if needed 0]} // Optional: rotate if needed
       >
-        I'am a Front end Web Developer!
+        I'am a Full Stack Web Developer!
       </Text>
       <Text
         position={[-0.05, 1.68, -1.4]} // X, Y, Z position in the room

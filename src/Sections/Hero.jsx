@@ -64,10 +64,8 @@ useGSAP (() =>{
               <h1>that Deliver Results</h1>
             </div>
             <p className="text-white text-sm md:text-xl relative z-10 pointer-events-none">
-              Hi, I'm Enyew, a frontend developer who loves creating
-              interactive, scalable web applications. My purpose is to build
-              solutions that offer dynamic UI, high performance and delightful
-              UX.
+              Hi, I’m Enyew 👋 | Full-Stack Developer building interactive,
+              scalable web apps with the MERN stack.
             </p>
             <Button
               className="md:w-80 md:h-16 w-60 h-12"

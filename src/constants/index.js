@@ -157,8 +157,8 @@ const techStackIcons = [
 const expCards = [
   {
     review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/alx-cer.png",
+      "Enyew has graduatedwith the bachelor of science degree in chemical and bioengineering on une 26, 2025 with Distniction and Exit exam result of passing mark, taken in June 2025.",
+    imgPath: "/images/AAU6.png",
     logoPath: "/images/AAU5.png",
     title: "Bsc. Chemical and Biengineering",
     date: "June 2021 -June 2025",
@@ -170,28 +170,28 @@ const expCards = [
   },
   {
     review:
-      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/ALX1.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+      "Enyew has graduated with certifications in Software Engineering Program in Frontend Web Development, AI Career Essentials, and Professional Foundations from ALX Africa.",
+    imgPath: "/images/ALX3.png",
+    logoPath: "/images/ALX2.png",
+    title: "Software Engineer (Frontend & AI)",
+    date: "March 2024 - October 2024",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Developed critical leadership, communication, problem-solving, and teamwork skills for success in global work environments.",
+      "Gained hands-on skills in building responsive, user-friendly web applications using modern frameworks, API integrations and best practices.",
+      "Built a strong foundation in artificial intelligence concepts, tools, and applications, preparing for future roles in data-driven and AI-powered fields.",
     ],
   },
   {
     review:
-      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+      "Enyew has completed Software Engineering with the Power Learn Project (PLP) in 2025.",
+    imgPath: "/images/PLP2.png",
+    logoPath: "/images/PLP3.png",
+    title: "Software Engineer(Full Stack)",
+    date: "June 2024 - present",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Gained practical experience in Python programming, databases (MySQL), and full-stack web development using MongoDB, Node.js, and Express.js.",
+      "Applied software engineering principles to design, build, and deploy efficient, scalable, and user-focused applications.",
+      "Strengthened ability to integrate backend and frontend technologies, creating complete solutions aligned with modern industry standards.",
     ],
   },
 ];
