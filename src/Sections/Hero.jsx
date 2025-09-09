@@ -1,16 +1,11 @@
-import React, {Suspense, lazy}from "react";
+import React from "react";
 import { words } from "../constants";
 import Button from "../components/Button.jsx";
-// import HeroExperience from "../components/HeroModels/HeroExperience";
+import HeroExperience from "../components/HeroModels/HeroExperience";
 import {useGSAP} from "@gsap/react"
 import gsap from "gsap";
-// import AnimatedCounter from "../components/AnimatedCounter";
-// import { Suspense } from "react";
-
-const HeroExperience = lazy(() =>
-  import("../components/HeroModels/HeroExperience")
-);
-const AnimatedCounter = lazy(() => import("../components/AnimatedCounter"));
+import AnimatedCounter from "../components/AnimatedCounter";
+// const HeroExperience = React.lazy(() => import("../components/HeroModels/HeroExperience"));
 
 const Hero = () => {
 
@@ -70,8 +65,7 @@ useGSAP (() =>{
               <h1>that Deliver Results</h1>
             </div>
             <p className="text-white text-sm md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Enyew 👋 | Full-Stack Developer building interactive,
-              scalable web apps with the MERN stack.
+              Hi, I’m Enyew 👋 | Full-Stack Developer building interactive, scalable web apps with the MERN stack.
             </p>
             <Button
               className="md:w-80 md:h-16 w-60 h-12"
@@ -84,17 +78,14 @@ useGSAP (() =>{
         {/* Right: Hero image / 3D */}
         <figure className="hero-image w-full md:w-1/2 flex justify-center items-center  z-10 h-full mt-10 md:mt-0">
           <div className="hero-3d-layout w-full h-full min-h-[50vh]  xl:-top-20 md:top-20 xl:-right-20 right-0 pt-10 ">
-
-            <Suspense fallback={<div className="flex-center min-h-[300px]">Loading...</div>}>
-              <HeroExperience />
-            </Suspense>
             {/* <HeroExperience /> */}
+            
+              <HeroExperience />
+           
           </div>
         </figure>
       </div>
-      <Suspense fallback={<div className="flex-center min-h-[300px]">Loading...</div>}>
-        <AnimatedCounter />
-      </Suspense>
+
       {/* <AnimatedCounter /> */}
     </section>
   );

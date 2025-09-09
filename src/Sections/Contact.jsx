@@ -1,9 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, Suspense, lazy } from "react";
 
 import TitleHeader from "../components/TitleHeader.jsx";
-import ContactExperience from "../components/ContactExperience.jsx";
+// import ContactExperience from "../components/ContactExperience.jsx";
 import emailjs from '@emailjs/browser';
 // import Button from "../components/Button.jsx";
+const ContactExperience = lazy(() => import("../components/ContactExperience.jsx"));
 
 const Contact = () => {
 const formRef=useRef(null);
@@ -118,7 +119,10 @@ const handleSubmit = async (e) => {
           {/* Right: 3D Experience Placeholder */}
           <div className="xl:col-span-7 min-h-96">
             <div className="w-full h-full bg-blue-400 hover:cursor-grap rounded-3xl overflow-hidden">
-              <ContactExperience />
+              {/* <ContactExperience /> */}
+              <Suspense fallback={<div className="flex-center w-full h-full">I can check my email everyday, so dont afraid Sending me an email</div>}>
+                <ContactExperience />
+              </Suspense>
             </div>
           </div>
         </div>
