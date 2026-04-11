@@ -49,6 +49,13 @@ const ShowcaseSection = () => {
       code: "https://github.com/Enyewashebr/e-Commerce-Website/tree/main/Enex-Boutique",
     },
     {
+      title: "Cafeteria Inventory & Multi-Branch Sales System",
+      desc: "A full-stack business management system for multi-branch cafeterias, enabling real-time sales tracking, inventory control, and financial reporting.",
+      img: "/images/3.jpg",
+      live: "https://zemeracafe.netlify.app/",
+      code: "https://github.com/Enyewashebr/Zemera-Inventory",
+    },
+    {
       title: "Netflix Clone",
       desc: "Netflix clone with TMDB API integration, smooth scrolling sections, hero banner, and hover effects.",
       img: "/images/netflix1.png",
