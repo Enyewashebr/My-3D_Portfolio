@@ -56,6 +56,13 @@ const ShowcaseSection = () => {
       code: "https://github.com/Enyewashebr/Zemera-Inventory",
     },
     {
+  title: "Fikat Finishing Materials Supplier PLC Website",
+  desc: "A full-stack corporate website for a finishing materials supplier featuring product management, project showcases, contact inquiries, an admin dashboard, authentication, and image upload functionality.",
+  img: "/images/fikat.png",
+  live: "https://fikatfinishing.com",
+  code: "https://github.com/Enyewashebr/Fikat-plc",
+},
+    {
       title: "Netflix Clone",
       desc: "Netflix clone with TMDB API integration, smooth scrolling sections, hero banner, and hover effects.",
       img: "/images/netflix1.png",
@@ -73,17 +80,14 @@ const ShowcaseSection = () => {
       title: "Real Estate Website",
       desc: "A sleek, responsive real estate landing page with smooth animations and a modern UI.",
       img: "/images/real-estate1.png",
-      live: "https://enexboutique.vercel.app/",
+      live: "https://enex-realestate.netlify.app/",
       code: "https://github.com/Enyewashebr/real-estate",
     },
     {
       title: "Eagle School Dashboard (Coming Soon)",
       desc: "A dashboard for managing school activities and student data.",
       img: "/images/eagle-school.png",
-      live: "#",
-      code: "https://github.com/Enyewashebr/Eagle-School-Management/tree/Enyew/src",
-    },
-  ];
+   
 
   return (
     <section id="projects" ref={sectionRef} className="py-20 px-10 mt-10">
@@ -135,5 +139,8 @@ const ShowcaseSection = () => {
     </section>
   );
 };
-
+   live: "#",
+      code: "https://github.com/Enyewashebr/Eagle-School-Management/tree/Enyew/src",
+    },
+  ];
 export default ShowcaseSection;
