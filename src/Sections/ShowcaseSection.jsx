@@ -87,6 +87,10 @@ const ShowcaseSection = () => {
       title: "Eagle School Dashboard (Coming Soon)",
       desc: "A dashboard for managing school activities and student data.",
       img: "/images/eagle-school.png",
+      live: "#",
+      code: "https://github.com/Enyewashebr/Eagle-School-Management/tree/Enyew/src",
+    },
+  ];
    
 
   return (
@@ -139,8 +143,5 @@ const ShowcaseSection = () => {
     </section>
   );
 };
-   live: "#",
-      code: "https://github.com/Enyewashebr/Eagle-School-Management/tree/Enyew/src",
-    },
-  ];
+   
 export default ShowcaseSection;
